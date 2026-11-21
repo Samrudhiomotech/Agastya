@@ -1,0 +1,28 @@
+streamlit
+pandas
+numpy
+scikit-learn
+shap
+joblib
+plotly
+statsmodels
+
+'''
+The system takes weekly EU ETS market data such as:
+
+Price–fundamental deviation → Is the carbon price unusually different from its fundamentals?
+Volume spike → Is trading volume suddenly unusually high?
+Price momentum → Is the price moving unusually fast?
+Non-compliance volume ratio → Is trading activity unusual relative to compliance activity?
+Off-deadline trading intensity → Is there unusual trading outside normal compliance periods?
+Options-to-futures ratio → Is the derivatives activity unusual?
+
+These 6 features are given to two anomaly-detection models:
+
+Isolation Forest + Autoencoder → Composite Anomaly Score (0–1)
+
+Low score → trading behaviour looks relatively normal.
+High score → trading behaviour is unusual/anomalous.
+Score ≥ threshold (default 0.75) → the dashboard flags an alert.
+So what does it actually predict?
+'''
